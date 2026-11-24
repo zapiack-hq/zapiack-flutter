@@ -1,6 +1,6 @@
 name: zapiack
-description: "The Zapiack SDK for Flutter. Push notifications today: register devices, follow taps and see what people do next. More Zapiack products arrive in the same package."
-version: 0.1.0
+description: "The Zapiack SDK for Flutter: push notifications, live messaging and voice and video calls in one package."
+version: 0.2.0
 homepage: https://zapiack.com
 documentation: https://docs.zapiack.com/push/client-sdks
 repository: https://github.com/zapiack-hq/zapiack-flutter
@@ -13,6 +13,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_webrtc: ^1.6.3
 
 dev_dependencies:
   flutter_test:

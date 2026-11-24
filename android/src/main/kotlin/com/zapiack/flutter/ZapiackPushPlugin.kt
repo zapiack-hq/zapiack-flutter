@@ -62,6 +62,8 @@ class ZapiackPushPlugin :
                 result.success(ZapiackPush.track(name, call.argument<Map<String, Any?>>("properties")))
             }
             "flush" -> { ZapiackPush.flush(); result.success(null) }
+            // Live Activities are iOS only. On Android a template's live parts are drawn in the notification with nothing to turn on.
+            "enableLiveActivities" -> result.success(null)
             "initialTap" -> { result.success(initialTap?.toMap()); initialTap = null }
             else -> result.notImplemented()
         }

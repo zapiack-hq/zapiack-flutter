@@ -1,0 +1,3378 @@
+{
+ "generated": "by tool/golden/generate.cjs from mediasoup-client 3.18.0",
+ "routerRtpCapabilities": {
+  "codecs": [
+   {
+    "kind": "audio",
+    "mimeType": "audio/opus",
+    "clockRate": 48000,
+    "channels": 2,
+    "rtcpFeedback": [
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     }
+    ],
+    "parameters": {
+     "useinbandfec": 1,
+     "usedtx": 1
+    },
+    "preferredPayloadType": 100
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/VP8",
+    "clockRate": 90000,
+    "rtcpFeedback": [
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     }
+    ],
+    "parameters": {
+     "x-google-start-bitrate": 1000
+    },
+    "preferredPayloadType": 101
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 102,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 101
+    },
+    "rtcpFeedback": []
+   }
+  ],
+  "headerExtensions": [
+   {
+    "kind": "audio",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+    "preferredId": 1,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+    "preferredId": 1,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id",
+    "preferredId": 2,
+    "preferredEncrypt": false,
+    "direction": "recvonly"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id",
+    "preferredId": 3,
+    "preferredEncrypt": false,
+    "direction": "recvonly"
+   },
+   {
+    "kind": "audio",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+    "preferredId": 4,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+    "preferredId": 4,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "audio",
+    "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+    "preferredId": 5,
+    "preferredEncrypt": false,
+    "direction": "recvonly"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+    "preferredId": 5,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "https://aomediacodec.github.io/av1-rtp-spec/#dependency-descriptor-rtp-header-extension",
+    "preferredId": 8,
+    "preferredEncrypt": false,
+    "direction": "recvonly"
+   },
+   {
+    "kind": "audio",
+    "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+    "preferredId": 10,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:3gpp:video-orientation",
+    "preferredId": 11,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:toffset",
+    "preferredId": 12,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "audio",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+    "preferredId": 13,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+    "preferredId": 13,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "audio",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+    "preferredId": 14,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+    "preferredId": 14,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   }
+  ]
+ },
+ "sdps": {
+  "a": "v=0\r\no=- 2166028085136501895 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 061be205-4601-460e-bd66-3dd1b35bf533\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:lq7u\r\na=ice-pwd:9Ao4nPDSwaVCCt7ccZjnnDK8\r\na=ice-options:trickle\r\na=fingerprint:sha-256 CD:F8:EE:6F:95:34:08:0F:41:61:92:D7:56:3B:B6:75:16:87:81:95:EB:EA:6A:1C:B8:E3:5A:AC:82:BB:E2:DF\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:061be205-4601-460e-bd66-3dd1b35bf533 e6d97591-40dc-4f6d-90d0-00366d85992e\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:1743034283 cname:vMZ7kWvYlFLiRm3w\r\na=ssrc:1743034283 msid:061be205-4601-460e-bd66-3dd1b35bf533 e6d97591-40dc-4f6d-90d0-00366d85992e\r\n",
+  "v": "v=0\r\no=- 6438355789225535578 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 10ce7f77-e290-41a3-9545-c1a6dea8084d\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:Kxs3\r\na=ice-pwd:05M7XQggb6RtJDglepyRwML0\r\na=ice-options:trickle\r\na=fingerprint:sha-256 55:39:6F:3D:BC:91:19:D8:4B:84:02:A7:96:6F:BA:7F:97:40:27:FC:9B:BE:02:AC:B4:D5:DF:B2:D8:26:8C:DE\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:10ce7f77-e290-41a3-9545-c1a6dea8084d b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 3403758891 3736630856\r\na=ssrc:3403758891 cname:SJRuBihFnBQFJ0GS\r\na=ssrc:3403758891 msid:10ce7f77-e290-41a3-9545-c1a6dea8084d b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=ssrc:3736630856 cname:SJRuBihFnBQFJ0GS\r\na=ssrc:3736630856 msid:10ce7f77-e290-41a3-9545-c1a6dea8084d b04239ce-b2be-49d9-92f8-f8c5691496e9\r\n",
+  "av": "v=0\r\no=- 7078455120522669118 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 9437e8a0-77ad-40d0-b966-a80eb21aeb96 c2fa56c1-1618-4987-947c-84d2e6b7b1ff\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KolA\r\na=ice-pwd:vblt6d3OHj/6agYB15qLbDyi\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A6:EB:98:CD:5E:D0:8C:DB:DB:A3:F7:B2:77:36:D6:E7:60:54:CE:98:14:F0:D2:DD:9C:94:7A:5C:18:D5:E1:39\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:9437e8a0-77ad-40d0-b966-a80eb21aeb96 e6d97591-40dc-4f6d-90d0-00366d85992e\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:3279055388 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:3279055388 msid:9437e8a0-77ad-40d0-b966-a80eb21aeb96 e6d97591-40dc-4f6d-90d0-00366d85992e\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KolA\r\na=ice-pwd:vblt6d3OHj/6agYB15qLbDyi\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A6:EB:98:CD:5E:D0:8C:DB:DB:A3:F7:B2:77:36:D6:E7:60:54:CE:98:14:F0:D2:DD:9C:94:7A:5C:18:D5:E1:39\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 2332852880 2438857249\r\na=ssrc:2332852880 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:2332852880 msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=ssrc:2438857249 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:2438857249 msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\n",
+  "va": "v=0\r\no=- 1797619076527086621 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 264819cc-8c63-471c-b6db-f1f4388953d6 e230f81c-1570-4b83-866f-79a36ef23ed4\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:ppGI\r\na=ice-pwd:qCU1fT9kOdj+yWLOogUarxxC\r\na=ice-options:trickle\r\na=fingerprint:sha-256 0B:80:7E:B1:E4:AA:33:45:CA:11:37:51:BF:A6:1F:90:2F:F8:39:20:11:1A:65:8D:E2:32:EE:B7:6B:8A:06:F4\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:264819cc-8c63-471c-b6db-f1f4388953d6 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 1859141247 702239802\r\na=ssrc:1859141247 cname:83VJb3kMENHLXq/N\r\na=ssrc:1859141247 msid:264819cc-8c63-471c-b6db-f1f4388953d6 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=ssrc:702239802 cname:83VJb3kMENHLXq/N\r\na=ssrc:702239802 msid:264819cc-8c63-471c-b6db-f1f4388953d6 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:ppGI\r\na=ice-pwd:qCU1fT9kOdj+yWLOogUarxxC\r\na=ice-options:trickle\r\na=fingerprint:sha-256 0B:80:7E:B1:E4:AA:33:45:CA:11:37:51:BF:A6:1F:90:2F:F8:39:20:11:1A:65:8D:E2:32:EE:B7:6B:8A:06:F4\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:e230f81c-1570-4b83-866f-79a36ef23ed4 e6d97591-40dc-4f6d-90d0-00366d85992e\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:2599468402 cname:83VJb3kMENHLXq/N\r\na=ssrc:2599468402 msid:e230f81c-1570-4b83-866f-79a36ef23ed4 e6d97591-40dc-4f6d-90d0-00366d85992e\r\n",
+  "avv": "v=0\r\no=- 2611280478431538196 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1 2\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 2aed54c3-55f8-40e0-8434-16511c08fb61 c78ea601-7a8c-4d1a-9ab5-71c3b30aea41\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KrPX\r\na=ice-pwd:XgHc4fbNaczUSus6h/mWu8R3\r\na=ice-options:trickle\r\na=fingerprint:sha-256 74:A4:AA:44:FA:B1:01:2B:85:3C:9D:BC:2B:CF:D4:37:F6:59:AC:D8:A9:D9:55:86:6C:22:CC:81:48:D4:0A:83\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:2aed54c3-55f8-40e0-8434-16511c08fb61 e6d97591-40dc-4f6d-90d0-00366d85992e\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:4233055875 cname:4DH50LqBJLLfBbND\r\na=ssrc:4233055875 msid:2aed54c3-55f8-40e0-8434-16511c08fb61 e6d97591-40dc-4f6d-90d0-00366d85992e\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KrPX\r\na=ice-pwd:XgHc4fbNaczUSus6h/mWu8R3\r\na=ice-options:trickle\r\na=fingerprint:sha-256 74:A4:AA:44:FA:B1:01:2B:85:3C:9D:BC:2B:CF:D4:37:F6:59:AC:D8:A9:D9:55:86:6C:22:CC:81:48:D4:0A:83\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:c78ea601-7a8c-4d1a-9ab5-71c3b30aea41 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 1109812528 1843050543\r\na=ssrc:1109812528 cname:4DH50LqBJLLfBbND\r\na=ssrc:1109812528 msid:c78ea601-7a8c-4d1a-9ab5-71c3b30aea41 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=ssrc:1843050543 cname:4DH50LqBJLLfBbND\r\na=ssrc:1843050543 msid:c78ea601-7a8c-4d1a-9ab5-71c3b30aea41 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KrPX\r\na=ice-pwd:XgHc4fbNaczUSus6h/mWu8R3\r\na=ice-options:trickle\r\na=fingerprint:sha-256 74:A4:AA:44:FA:B1:01:2B:85:3C:9D:BC:2B:CF:D4:37:F6:59:AC:D8:A9:D9:55:86:6C:22:CC:81:48:D4:0A:83\r\na=setup:actpass\r\na=mid:2\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:a0557cc8-40df-4d2b-a41d-f4652be4615c 0f559cbf-efa9-4e61-82cd-784dc4ab9b2f\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 3364078961 3676403913\r\na=ssrc:3364078961 cname:4DH50LqBJLLfBbND\r\na=ssrc:3364078961 msid:a0557cc8-40df-4d2b-a41d-f4652be4615c 0f559cbf-efa9-4e61-82cd-784dc4ab9b2f\r\na=ssrc:3676403913 cname:4DH50LqBJLLfBbND\r\na=ssrc:3676403913 msid:a0557cc8-40df-4d2b-a41d-f4652be4615c 0f559cbf-efa9-4e61-82cd-784dc4ab9b2f\r\n",
+  "vv": "v=0\r\no=- 5361072836115175073 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 130f19b5-a145-4455-ba61-d3fcb59b9e10\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:XwaG\r\na=ice-pwd:ZgE4D4qubNwTJ4cBUSp/XuUZ\r\na=ice-options:trickle\r\na=fingerprint:sha-256 99:E0:95:E1:B9:42:99:B0:86:55:E6:19:09:AA:48:18:4F:B6:84:4B:47:63:1A:EF:3C:F0:68:47:9F:45:CD:33\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:130f19b5-a145-4455-ba61-d3fcb59b9e10 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 4084408311 297257989\r\na=ssrc:4084408311 cname:8keEDSeL3hsAZw+L\r\na=ssrc:4084408311 msid:130f19b5-a145-4455-ba61-d3fcb59b9e10 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=ssrc:297257989 cname:8keEDSeL3hsAZw+L\r\na=ssrc:297257989 msid:130f19b5-a145-4455-ba61-d3fcb59b9e10 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:XwaG\r\na=ice-pwd:ZgE4D4qubNwTJ4cBUSp/XuUZ\r\na=ice-options:trickle\r\na=fingerprint:sha-256 99:E0:95:E1:B9:42:99:B0:86:55:E6:19:09:AA:48:18:4F:B6:84:4B:47:63:1A:EF:3C:F0:68:47:9F:45:CD:33\r\na=setup:actpass\r\na=mid:1\r\na=extmap:1 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 urn:3gpp:video-orientation\r\na=extmap:4 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:9 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:74d59383-cf69-46e7-b772-c83a03e2899b 063bce91-0991-4d17-8a2a-398fcfd304ba\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 627883144 3551082249\r\na=ssrc:627883144 cname:8keEDSeL3hsAZw+L\r\na=ssrc:627883144 msid:74d59383-cf69-46e7-b772-c83a03e2899b 063bce91-0991-4d17-8a2a-398fcfd304ba\r\na=ssrc:3551082249 cname:8keEDSeL3hsAZw+L\r\na=ssrc:3551082249 msid:74d59383-cf69-46e7-b772-c83a03e2899b 063bce91-0991-4d17-8a2a-398fcfd304ba\r\n",
+  "ava": "v=0\r\no=- 6588050740343016522 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1 2\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 558cd988-99c0-4367-92cd-113dad988998 7795b8ec-72fb-4368-95d0-2bc9f087f497\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:bM0f\r\na=ice-pwd:y8N1JKP2PcT5k4WfMvSLwLo9\r\na=ice-options:trickle\r\na=fingerprint:sha-256 F2:4D:E1:3A:CD:DB:69:9E:B2:A7:CD:7B:92:2B:DA:EB:A1:12:F7:E4:26:36:D7:B2:91:31:3E:9A:3F:2A:21:AA\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:558cd988-99c0-4367-92cd-113dad988998 e6d97591-40dc-4f6d-90d0-00366d85992e\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:4212163218 cname:djACK07qVjZRfuJc\r\na=ssrc:4212163218 msid:558cd988-99c0-4367-92cd-113dad988998 e6d97591-40dc-4f6d-90d0-00366d85992e\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:bM0f\r\na=ice-pwd:y8N1JKP2PcT5k4WfMvSLwLo9\r\na=ice-options:trickle\r\na=fingerprint:sha-256 F2:4D:E1:3A:CD:DB:69:9E:B2:A7:CD:7B:92:2B:DA:EB:A1:12:F7:E4:26:36:D7:B2:91:31:3E:9A:3F:2A:21:AA\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:7795b8ec-72fb-4368-95d0-2bc9f087f497 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 3397156853 2415869837\r\na=ssrc:3397156853 cname:djACK07qVjZRfuJc\r\na=ssrc:3397156853 msid:7795b8ec-72fb-4368-95d0-2bc9f087f497 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=ssrc:2415869837 cname:djACK07qVjZRfuJc\r\na=ssrc:2415869837 msid:7795b8ec-72fb-4368-95d0-2bc9f087f497 b04239ce-b2be-49d9-92f8-f8c5691496e9\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:bM0f\r\na=ice-pwd:y8N1JKP2PcT5k4WfMvSLwLo9\r\na=ice-options:trickle\r\na=fingerprint:sha-256 F2:4D:E1:3A:CD:DB:69:9E:B2:A7:CD:7B:92:2B:DA:EB:A1:12:F7:E4:26:36:D7:B2:91:31:3E:9A:3F:2A:21:AA\r\na=setup:actpass\r\na=mid:2\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:77515e48-c4f0-49ef-b97e-4f2b0d803c4f 906b1fa6-8d6a-4c10-8adf-eca5e6a31caf\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:192241224 cname:djACK07qVjZRfuJc\r\na=ssrc:192241224 msid:77515e48-c4f0-49ef-b97e-4f2b0d803c4f 906b1fa6-8d6a-4c10-8adf-eca5e6a31caf\r\n",
+  "audio": "v=0\r\no=- 2166028085136501895 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 061be205-4601-460e-bd66-3dd1b35bf533\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:lq7u\r\na=ice-pwd:9Ao4nPDSwaVCCt7ccZjnnDK8\r\na=ice-options:trickle\r\na=fingerprint:sha-256 CD:F8:EE:6F:95:34:08:0F:41:61:92:D7:56:3B:B6:75:16:87:81:95:EB:EA:6A:1C:B8:E3:5A:AC:82:BB:E2:DF\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:061be205-4601-460e-bd66-3dd1b35bf533 e6d97591-40dc-4f6d-90d0-00366d85992e\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:1743034283 cname:vMZ7kWvYlFLiRm3w\r\na=ssrc:1743034283 msid:061be205-4601-460e-bd66-3dd1b35bf533 e6d97591-40dc-4f6d-90d0-00366d85992e\r\n",
+  "audioVideo": "v=0\r\no=- 7078455120522669118 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 9437e8a0-77ad-40d0-b966-a80eb21aeb96 c2fa56c1-1618-4987-947c-84d2e6b7b1ff\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KolA\r\na=ice-pwd:vblt6d3OHj/6agYB15qLbDyi\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A6:EB:98:CD:5E:D0:8C:DB:DB:A3:F7:B2:77:36:D6:E7:60:54:CE:98:14:F0:D2:DD:9C:94:7A:5C:18:D5:E1:39\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:9437e8a0-77ad-40d0-b966-a80eb21aeb96 e6d97591-40dc-4f6d-90d0-00366d85992e\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:3279055388 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:3279055388 msid:9437e8a0-77ad-40d0-b966-a80eb21aeb96 e6d97591-40dc-4f6d-90d0-00366d85992e\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KolA\r\na=ice-pwd:vblt6d3OHj/6agYB15qLbDyi\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A6:EB:98:CD:5E:D0:8C:DB:DB:A3:F7:B2:77:36:D6:E7:60:54:CE:98:14:F0:D2:DD:9C:94:7A:5C:18:D5:E1:39\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 2332852880 2438857249\r\na=ssrc:2332852880 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:2332852880 msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=ssrc:2438857249 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:2438857249 msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\n",
+  "native": "v=0\r\no=- 4292192941120234492 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:/TKi\r\na=ice-pwd:+vzGl5r/GiLvwGKJXmBeetBV\r\na=ice-options:trickle\r\na=fingerprint:sha-256 1E:E3:D5:9D:06:B3:7C:08:58:56:E5:26:D9:08:25:DA:6F:14:21:BE:61:6D:05:90:73:A7:71:A6:41:94:46:80\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendrecv\r\na=msid:- eea3ea23-a895-4221-b718-df4b2498c095\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:2714603327 cname:IBcyeqsax09CNwE6\r\na=ssrc:2714603327 msid:- eea3ea23-a895-4221-b718-df4b2498c095\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:/TKi\r\na=ice-pwd:+vzGl5r/GiLvwGKJXmBeetBV\r\na=ice-options:trickle\r\na=fingerprint:sha-256 1E:E3:D5:9D:06:B3:7C:08:58:56:E5:26:D9:08:25:DA:6F:14:21:BE:61:6D:05:90:73:A7:71:A6:41:94:46:80\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=extmap:12 https://aomediacodec.github.io/av1-rtp-spec/#dependency-descriptor-rtp-header-extension\r\na=extmap:9 http://www.webrtc.org/experiments/rtp-hdrext/video-layers-allocation00\r\na=sendrecv\r\na=msid:- 5284f533-5e95-425b-8f35-2167e2aec2a7\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 81655384 3067957857\r\na=ssrc:81655384 cname:IBcyeqsax09CNwE6\r\na=ssrc:81655384 msid:- 5284f533-5e95-425b-8f35-2167e2aec2a7\r\na=ssrc:3067957857 cname:IBcyeqsax09CNwE6\r\na=ssrc:3067957857 msid:- 5284f533-5e95-425b-8f35-2167e2aec2a7\r\n"
+ },
+ "nativeCaps": {
+  "codecs": [
+   {
+    "kind": "audio",
+    "mimeType": "audio/opus",
+    "preferredPayloadType": 111,
+    "clockRate": 48000,
+    "channels": 2,
+    "parameters": {
+     "minptime": 10,
+     "useinbandfec": 1
+    },
+    "rtcpFeedback": [
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "nack"
+     }
+    ]
+   },
+   {
+    "kind": "audio",
+    "mimeType": "audio/red",
+    "preferredPayloadType": 63,
+    "clockRate": 48000,
+    "channels": 2,
+    "parameters": {
+     "111/111": ""
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "audio",
+    "mimeType": "audio/G722",
+    "preferredPayloadType": 9,
+    "clockRate": 8000,
+    "channels": 1,
+    "parameters": {},
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "audio",
+    "mimeType": "audio/PCMU",
+    "preferredPayloadType": 0,
+    "clockRate": 8000,
+    "channels": 1,
+    "parameters": {},
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "audio",
+    "mimeType": "audio/PCMA",
+    "preferredPayloadType": 8,
+    "clockRate": 8000,
+    "channels": 1,
+    "parameters": {},
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "audio",
+    "mimeType": "audio/CN",
+    "preferredPayloadType": 13,
+    "clockRate": 8000,
+    "channels": 1,
+    "parameters": {},
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "audio",
+    "mimeType": "audio/telephone-event",
+    "preferredPayloadType": 110,
+    "clockRate": 48000,
+    "channels": 1,
+    "parameters": {},
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "audio",
+    "mimeType": "audio/telephone-event",
+    "preferredPayloadType": 126,
+    "clockRate": 8000,
+    "channels": 1,
+    "parameters": {},
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/VP8",
+    "preferredPayloadType": 96,
+    "clockRate": 90000,
+    "parameters": {},
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 97,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 96
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/H264",
+    "preferredPayloadType": 102,
+    "clockRate": 90000,
+    "parameters": {
+     "level-asymmetry-allowed": 1,
+     "packetization-mode": 1,
+     "profile-level-id": "42001f"
+    },
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 103,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 102
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/H264",
+    "preferredPayloadType": 104,
+    "clockRate": 90000,
+    "parameters": {
+     "level-asymmetry-allowed": 1,
+     "packetization-mode": 0,
+     "profile-level-id": "42001f"
+    },
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 107,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 104
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/H264",
+    "preferredPayloadType": 108,
+    "clockRate": 90000,
+    "parameters": {
+     "level-asymmetry-allowed": 1,
+     "packetization-mode": 1,
+     "profile-level-id": "42e01f"
+    },
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 109,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 108
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/H264",
+    "preferredPayloadType": 114,
+    "clockRate": 90000,
+    "parameters": {
+     "level-asymmetry-allowed": 1,
+     "packetization-mode": 0,
+     "profile-level-id": "42e01f"
+    },
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 115,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 114
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/H264",
+    "preferredPayloadType": 116,
+    "clockRate": 90000,
+    "parameters": {
+     "level-asymmetry-allowed": 1,
+     "packetization-mode": 1,
+     "profile-level-id": "4d001f"
+    },
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 117,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 116
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/H264",
+    "preferredPayloadType": 39,
+    "clockRate": 90000,
+    "parameters": {
+     "level-asymmetry-allowed": 1,
+     "packetization-mode": 0,
+     "profile-level-id": "4d001f"
+    },
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 40,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 39
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/AV1",
+    "preferredPayloadType": 45,
+    "clockRate": 90000,
+    "parameters": {
+     "level-idx": 5,
+     "profile": 0,
+     "tier": 0
+    },
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 46,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 45
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/VP9",
+    "preferredPayloadType": 98,
+    "clockRate": 90000,
+    "parameters": {
+     "profile-id": 0
+    },
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 99,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 98
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/VP9",
+    "preferredPayloadType": 100,
+    "clockRate": 90000,
+    "parameters": {
+     "profile-id": 2
+    },
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 101,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 100
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/red",
+    "preferredPayloadType": 118,
+    "clockRate": 90000,
+    "parameters": {},
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 119,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 118
+    },
+    "rtcpFeedback": []
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/ulpfec",
+    "preferredPayloadType": 120,
+    "clockRate": 90000,
+    "parameters": {},
+    "rtcpFeedback": []
+   }
+  ],
+  "headerExtensions": [
+   {
+    "kind": "audio",
+    "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+    "preferredId": 1,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+    "preferredId": 2,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+    "preferredId": 3,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+    "preferredId": 4,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:toffset",
+    "preferredId": 14,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:3gpp:video-orientation",
+    "preferredId": 13,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+    "preferredId": 5,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/video-content-type",
+    "preferredId": 6,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/video-timing",
+    "preferredId": 7,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/color-space",
+    "preferredId": 8,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id",
+    "preferredId": 10,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id",
+    "preferredId": 11,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "https://aomediacodec.github.io/av1-rtp-spec/#dependency-descriptor-rtp-header-extension",
+    "preferredId": 12,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/video-layers-allocation00",
+    "preferredId": 9,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   }
+  ]
+ },
+ "extended": {
+  "codecs": [
+   {
+    "kind": "audio",
+    "mimeType": "audio/opus",
+    "clockRate": 48000,
+    "channels": 2,
+    "localPayloadType": 111,
+    "remotePayloadType": 100,
+    "localParameters": {
+     "minptime": 10,
+     "useinbandfec": 1
+    },
+    "remoteParameters": {
+     "useinbandfec": 1,
+     "usedtx": 1
+    },
+    "rtcpFeedback": [
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/VP8",
+    "clockRate": 90000,
+    "localPayloadType": 96,
+    "localRtxPayloadType": 97,
+    "remotePayloadType": 101,
+    "remoteRtxPayloadType": 102,
+    "localParameters": {},
+    "remoteParameters": {
+     "x-google-start-bitrate": 1000
+    },
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   }
+  ],
+  "headerExtensions": [
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+    "sendId": 4,
+    "recvId": 1,
+    "encrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id",
+    "sendId": 10,
+    "recvId": 2,
+    "encrypt": false,
+    "direction": "sendonly"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id",
+    "sendId": 11,
+    "recvId": 3,
+    "encrypt": false,
+    "direction": "sendonly"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+    "sendId": 2,
+    "recvId": 4,
+    "encrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+    "sendId": 3,
+    "recvId": 5,
+    "encrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "https://aomediacodec.github.io/av1-rtp-spec/#dependency-descriptor-rtp-header-extension",
+    "sendId": 12,
+    "recvId": 8,
+    "encrypt": false,
+    "direction": "sendonly"
+   },
+   {
+    "kind": "audio",
+    "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+    "sendId": 1,
+    "recvId": 10,
+    "encrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:3gpp:video-orientation",
+    "sendId": 13,
+    "recvId": 11,
+    "encrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:toffset",
+    "sendId": 14,
+    "recvId": 12,
+    "encrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+    "sendId": 5,
+    "recvId": 14,
+    "encrypt": false,
+    "direction": "sendrecv"
+   }
+  ]
+ },
+ "recvCaps": {
+  "codecs": [
+   {
+    "kind": "audio",
+    "mimeType": "audio/opus",
+    "preferredPayloadType": 100,
+    "clockRate": 48000,
+    "channels": 2,
+    "parameters": {
+     "minptime": 10,
+     "useinbandfec": 1
+    },
+    "rtcpFeedback": [
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/VP8",
+    "preferredPayloadType": 101,
+    "clockRate": 90000,
+    "parameters": {},
+    "rtcpFeedback": [
+     {
+      "type": "goog-remb",
+      "parameter": ""
+     },
+     {
+      "type": "transport-cc",
+      "parameter": ""
+     },
+     {
+      "type": "ccm",
+      "parameter": "fir"
+     },
+     {
+      "type": "nack",
+      "parameter": ""
+     },
+     {
+      "type": "nack",
+      "parameter": "pli"
+     }
+    ]
+   },
+   {
+    "kind": "video",
+    "mimeType": "video/rtx",
+    "preferredPayloadType": 102,
+    "clockRate": 90000,
+    "parameters": {
+     "apt": 101
+    },
+    "rtcpFeedback": []
+   }
+  ],
+  "headerExtensions": [
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+    "preferredId": 1,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+    "preferredId": 4,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+    "preferredId": 5,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "audio",
+    "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+    "preferredId": 10,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:3gpp:video-orientation",
+    "preferredId": 11,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "urn:ietf:params:rtp-hdrext:toffset",
+    "preferredId": 12,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   },
+   {
+    "kind": "video",
+    "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+    "preferredId": 14,
+    "preferredEncrypt": false,
+    "direction": "sendrecv"
+   }
+  ]
+ },
+ "send": {
+  "transportParams": {
+   "iceParameters": {
+    "usernameFragment": "fh6468n4h6tl94apourh3p89ir2a6hvu",
+    "password": "9r86omhi7kjfvms7ao9z936nst4kw798",
+    "iceLite": true
+   },
+   "iceCandidates": [
+    {
+     "foundation": "udpcandidate",
+     "priority": 1076302079,
+     "ip": "127.0.0.1",
+     "address": "127.0.0.1",
+     "protocol": "udp",
+     "port": 10314,
+     "type": "host"
+    },
+    {
+     "foundation": "tcpcandidate",
+     "priority": 1076276479,
+     "ip": "127.0.0.1",
+     "address": "127.0.0.1",
+     "protocol": "tcp",
+     "port": 32273,
+     "type": "host",
+     "tcpType": "passive"
+    }
+   ],
+   "dtlsParameters": {
+    "fingerprints": [
+     {
+      "algorithm": "sha-512",
+      "value": "C8:B9:49:47:90:07:85:1A:4A:3C:97:F7:FA:A3:32:B8:32:FA:3C:13:91:B2:57:32:5F:AC:F4:B8:5C:72:D0:3B:CE:6C:40:7A:E2:F5:6C:4A:7E:D6:C2:A1:AD:BF:92:52:84:2D:87:49:06:06:52:63:ED:E3:A4:BF:20:51:50:E9"
+     },
+     {
+      "algorithm": "sha-1",
+      "value": "65:56:91:C4:2F:D6:79:9B:EB:A0:14:BA:63:9E:A6:B9:AF:38:9B:03"
+     },
+     {
+      "algorithm": "sha-224",
+      "value": "D1:CA:D5:24:F5:E4:44:7D:F2:90:C6:DD:FB:26:50:2E:8C:17:BB:ED:6E:8A:08:10:00:5C:4A:38"
+     },
+     {
+      "algorithm": "sha-256",
+      "value": "E2:3F:C1:10:AE:D7:26:28:23:00:06:32:B5:10:B0:64:AE:30:90:B1:08:88:C0:DA:E1:58:FA:EA:9E:0D:62:0C"
+     },
+     {
+      "algorithm": "sha-384",
+      "value": "F1:96:F3:5F:57:AC:AD:3C:E2:82:A6:3A:B8:81:B8:84:DF:30:65:88:21:8C:EE:50:FD:60:EB:1F:0A:F4:76:29:B4:69:AD:9B:4B:3C:7C:13:A8:82:BE:36:5F:B7:C9:81"
+     }
+    ],
+    "role": "auto"
+   }
+  },
+  "steps": [
+   {
+    "kind": "audio",
+    "offerSdp": "v=0\r\no=- 7078455120522669118 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 9437e8a0-77ad-40d0-b966-a80eb21aeb96 c2fa56c1-1618-4987-947c-84d2e6b7b1ff\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KolA\r\na=ice-pwd:vblt6d3OHj/6agYB15qLbDyi\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A6:EB:98:CD:5E:D0:8C:DB:DB:A3:F7:B2:77:36:D6:E7:60:54:CE:98:14:F0:D2:DD:9C:94:7A:5C:18:D5:E1:39\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:9437e8a0-77ad-40d0-b966-a80eb21aeb96 e6d97591-40dc-4f6d-90d0-00366d85992e\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:3279055388 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:3279055388 msid:9437e8a0-77ad-40d0-b966-a80eb21aeb96 e6d97591-40dc-4f6d-90d0-00366d85992e\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KolA\r\na=ice-pwd:vblt6d3OHj/6agYB15qLbDyi\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A6:EB:98:CD:5E:D0:8C:DB:DB:A3:F7:B2:77:36:D6:E7:60:54:CE:98:14:F0:D2:DD:9C:94:7A:5C:18:D5:E1:39\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 2332852880 2438857249\r\na=ssrc:2332852880 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:2332852880 msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=ssrc:2438857249 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:2438857249 msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\n",
+    "mediaIndex": 0,
+    "codecOptions": {
+     "opusDtx": true,
+     "opusFec": true
+    },
+    "extra": [
+     {
+      "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+      "kind": "audio",
+      "direction": "sendonly"
+     }
+    ],
+    "expectNative": {
+     "codecs": [
+      {
+       "kind": "audio",
+       "mimeType": "audio/opus",
+       "preferredPayloadType": 111,
+       "clockRate": 48000,
+       "channels": 2,
+       "parameters": {
+        "minptime": 10,
+        "useinbandfec": 1
+       },
+       "rtcpFeedback": [
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "nack"
+        }
+       ]
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/red",
+       "preferredPayloadType": 63,
+       "clockRate": 48000,
+       "channels": 2,
+       "parameters": {
+        "111/111": ""
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/G722",
+       "preferredPayloadType": 9,
+       "clockRate": 8000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/PCMU",
+       "preferredPayloadType": 0,
+       "clockRate": 8000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/PCMA",
+       "preferredPayloadType": 8,
+       "clockRate": 8000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/CN",
+       "preferredPayloadType": 13,
+       "clockRate": 8000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/telephone-event",
+       "preferredPayloadType": 110,
+       "clockRate": 48000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/telephone-event",
+       "preferredPayloadType": 126,
+       "clockRate": 8000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/VP8",
+       "preferredPayloadType": 96,
+       "clockRate": 90000,
+       "parameters": {},
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 97,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 96
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 102,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 1,
+        "profile-level-id": "42001f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 103,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 102
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 104,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 0,
+        "profile-level-id": "42001f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 107,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 104
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 108,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 1,
+        "profile-level-id": "42e01f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 109,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 108
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 114,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 0,
+        "profile-level-id": "42e01f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 115,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 114
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 116,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 1,
+        "profile-level-id": "4d001f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 117,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 116
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 39,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 0,
+        "profile-level-id": "4d001f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 40,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 39
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/AV1",
+       "preferredPayloadType": 45,
+       "clockRate": 90000,
+       "parameters": {
+        "level-idx": 5,
+        "profile": 0,
+        "tier": 0
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 46,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 45
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/VP9",
+       "preferredPayloadType": 98,
+       "clockRate": 90000,
+       "parameters": {
+        "profile-id": 0
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 99,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 98
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/VP9",
+       "preferredPayloadType": 100,
+       "clockRate": 90000,
+       "parameters": {
+        "profile-id": 2
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 101,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 100
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/red",
+       "preferredPayloadType": 118,
+       "clockRate": 90000,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 119,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 118
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/ulpfec",
+       "preferredPayloadType": 120,
+       "clockRate": 90000,
+       "parameters": {},
+       "rtcpFeedback": []
+      }
+     ],
+     "headerExtensions": [
+      {
+       "kind": "audio",
+       "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+       "preferredId": 1,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+       "preferredId": 2,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+       "preferredId": 3,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+       "preferredId": 4,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:toffset",
+       "preferredId": 14,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:3gpp:video-orientation",
+       "preferredId": 13,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+       "preferredId": 5,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/video-content-type",
+       "preferredId": 6,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/video-timing",
+       "preferredId": 7,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/color-space",
+       "preferredId": 8,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id",
+       "preferredId": 10,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id",
+       "preferredId": 11,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "audio",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+       "preferredId": 9,
+       "preferredEncrypt": false,
+       "direction": "sendonly"
+      }
+     ]
+    },
+    "expectExtended": {
+     "codecs": [
+      {
+       "kind": "audio",
+       "mimeType": "audio/opus",
+       "clockRate": 48000,
+       "channels": 2,
+       "localPayloadType": 111,
+       "remotePayloadType": 100,
+       "localParameters": {
+        "minptime": 10,
+        "useinbandfec": 1,
+        "usedtx": 1
+       },
+       "remoteParameters": {
+        "useinbandfec": 1,
+        "usedtx": 1
+       },
+       "rtcpFeedback": [
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/VP8",
+       "clockRate": 90000,
+       "localPayloadType": 96,
+       "localRtxPayloadType": 97,
+       "remotePayloadType": 101,
+       "remoteRtxPayloadType": 102,
+       "localParameters": {},
+       "remoteParameters": {
+        "x-google-start-bitrate": 1000
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      }
+     ],
+     "headerExtensions": [
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+       "sendId": 4,
+       "recvId": 1,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id",
+       "sendId": 10,
+       "recvId": 2,
+       "encrypt": false,
+       "direction": "sendonly"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id",
+       "sendId": 11,
+       "recvId": 3,
+       "encrypt": false,
+       "direction": "sendonly"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+       "sendId": 2,
+       "recvId": 4,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+       "sendId": 3,
+       "recvId": 5,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "audio",
+       "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+       "sendId": 1,
+       "recvId": 10,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:3gpp:video-orientation",
+       "sendId": 13,
+       "recvId": 11,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:toffset",
+       "sendId": 14,
+       "recvId": 12,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "audio",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+       "sendId": 9,
+       "recvId": 13,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+       "sendId": 5,
+       "recvId": 14,
+       "encrypt": false,
+       "direction": "sendrecv"
+      }
+     ]
+    },
+    "expectParams": {
+     "mid": "0",
+     "codecs": [
+      {
+       "mimeType": "audio/opus",
+       "payloadType": 111,
+       "clockRate": 48000,
+       "channels": 2,
+       "parameters": {
+        "minptime": 10,
+        "useinbandfec": 1,
+        "usedtx": 1
+       },
+       "rtcpFeedback": [
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        }
+       ]
+      }
+     ],
+     "headerExtensions": [
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+       "id": 1,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+       "id": 9,
+       "encrypt": false,
+       "parameters": {}
+      }
+     ],
+     "encodings": [
+      {
+       "ssrc": 3279055388
+      }
+     ],
+     "rtcp": {
+      "cname": "xNdY9dgRvC8+jCAA"
+     },
+     "msid": "stream-1 track-audio"
+    },
+    "expectRemoteParams": {
+     "codecs": [
+      {
+       "mimeType": "audio/opus",
+       "payloadType": 111,
+       "clockRate": 48000,
+       "channels": 2,
+       "parameters": {
+        "useinbandfec": 1,
+        "usedtx": 1
+       },
+       "rtcpFeedback": [
+        {
+         "type": "nack",
+         "parameter": ""
+        }
+       ]
+      }
+     ],
+     "headerExtensions": [
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+       "id": 1,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+       "id": 9,
+       "encrypt": false,
+       "parameters": {}
+      }
+     ],
+     "encodings": [],
+     "rtcp": {}
+    },
+    "expectRemoteSdp": "v=0\r\no=mediasoup-client 10000 1 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=ice-lite\r\na=fingerprint:sha-384 F1:96:F3:5F:57:AC:AD:3C:E2:82:A6:3A:B8:81:B8:84:DF:30:65:88:21:8C:EE:50:FD:60:EB:1F:0A:F4:76:29:B4:69:AD:9B:4B:3C:7C:13:A8:82:BE:36:5F:B7:C9:81\r\na=ice-options:ice2\r\na=group:BUNDLE 0\r\nm=audio 7 UDP/TLS/RTP/SAVPF 111\r\nc=IN IP4 127.0.0.1\r\na=rtpmap:111 opus/48000/2\r\na=fmtp:111 useinbandfec=1;usedtx=1\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=setup:passive\r\na=mid:0\r\na=recvonly\r\na=ice-ufrag:fh6468n4h6tl94apourh3p89ir2a6hvu\r\na=ice-pwd:9r86omhi7kjfvms7ao9z936nst4kw798\r\na=candidate:udpcandidate 1 udp 1076302079 127.0.0.1 10314 typ host\r\na=candidate:tcpcandidate 1 tcp 1076276479 127.0.0.1 32273 typ host tcptype passive\r\na=end-of-candidates\r\na=ice-options:renomination\r\na=rtcp-mux\r\na=rtcp-rsize\r\n"
+   },
+   {
+    "kind": "video",
+    "offerSdp": "v=0\r\no=- 7078455120522669118 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS 9437e8a0-77ad-40d0-b966-a80eb21aeb96 c2fa56c1-1618-4987-947c-84d2e6b7b1ff\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111 63 9 0 8 13 110 126\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KolA\r\na=ice-pwd:vblt6d3OHj/6agYB15qLbDyi\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A6:EB:98:CD:5E:D0:8C:DB:DB:A3:F7:B2:77:36:D6:E7:60:54:CE:98:14:F0:D2:DD:9C:94:7A:5C:18:D5:E1:39\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:9437e8a0-77ad-40d0-b966-a80eb21aeb96 e6d97591-40dc-4f6d-90d0-00366d85992e\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=rtpmap:63 red/48000/2\r\na=fmtp:63 111/111\r\na=rtpmap:9 G722/8000\r\na=rtpmap:0 PCMU/8000\r\na=rtpmap:8 PCMA/8000\r\na=rtpmap:13 CN/8000\r\na=rtpmap:110 telephone-event/48000\r\na=rtpmap:126 telephone-event/8000\r\na=ssrc:3279055388 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:3279055388 msid:9437e8a0-77ad-40d0-b966-a80eb21aeb96 e6d97591-40dc-4f6d-90d0-00366d85992e\r\nm=video 9 UDP/TLS/RTP/SAVPF 96 97 102 103 104 107 108 109 114 115 116 117 39 40 45 46 98 99 100 101 118 119 120\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:KolA\r\na=ice-pwd:vblt6d3OHj/6agYB15qLbDyi\r\na=ice-options:trickle\r\na=fingerprint:sha-256 A6:EB:98:CD:5E:D0:8C:DB:DB:A3:F7:B2:77:36:D6:E7:60:54:CE:98:14:F0:D2:DD:9C:94:7A:5C:18:D5:E1:39\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtcp-xr:rcvr-rtt=all\r\na=rtpmap:96 VP8/90000\r\na=rtcp-fb:96 goog-remb\r\na=rtcp-fb:96 transport-cc\r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack\r\na=rtcp-fb:96 nack pli\r\na=rtpmap:97 rtx/90000\r\na=fmtp:97 apt=96\r\na=rtpmap:102 H264/90000\r\na=rtcp-fb:102 goog-remb\r\na=rtcp-fb:102 transport-cc\r\na=rtcp-fb:102 ccm fir\r\na=rtcp-fb:102 nack\r\na=rtcp-fb:102 nack pli\r\na=fmtp:102 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42001f\r\na=rtpmap:103 rtx/90000\r\na=fmtp:103 apt=102\r\na=rtpmap:104 H264/90000\r\na=rtcp-fb:104 goog-remb\r\na=rtcp-fb:104 transport-cc\r\na=rtcp-fb:104 ccm fir\r\na=rtcp-fb:104 nack\r\na=rtcp-fb:104 nack pli\r\na=fmtp:104 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42001f\r\na=rtpmap:107 rtx/90000\r\na=fmtp:107 apt=104\r\na=rtpmap:108 H264/90000\r\na=rtcp-fb:108 goog-remb\r\na=rtcp-fb:108 transport-cc\r\na=rtcp-fb:108 ccm fir\r\na=rtcp-fb:108 nack\r\na=rtcp-fb:108 nack pli\r\na=fmtp:108 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=rtpmap:109 rtx/90000\r\na=fmtp:109 apt=108\r\na=rtpmap:114 H264/90000\r\na=rtcp-fb:114 goog-remb\r\na=rtcp-fb:114 transport-cc\r\na=rtcp-fb:114 ccm fir\r\na=rtcp-fb:114 nack\r\na=rtcp-fb:114 nack pli\r\na=fmtp:114 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=42e01f\r\na=rtpmap:115 rtx/90000\r\na=fmtp:115 apt=114\r\na=rtpmap:116 H264/90000\r\na=rtcp-fb:116 goog-remb\r\na=rtcp-fb:116 transport-cc\r\na=rtcp-fb:116 ccm fir\r\na=rtcp-fb:116 nack\r\na=rtcp-fb:116 nack pli\r\na=fmtp:116 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=4d001f\r\na=rtpmap:117 rtx/90000\r\na=fmtp:117 apt=116\r\na=rtpmap:39 H264/90000\r\na=rtcp-fb:39 goog-remb\r\na=rtcp-fb:39 transport-cc\r\na=rtcp-fb:39 ccm fir\r\na=rtcp-fb:39 nack\r\na=rtcp-fb:39 nack pli\r\na=fmtp:39 level-asymmetry-allowed=1;packetization-mode=0;profile-level-id=4d001f\r\na=rtpmap:40 rtx/90000\r\na=fmtp:40 apt=39\r\na=rtpmap:45 AV1/90000\r\na=rtcp-fb:45 goog-remb\r\na=rtcp-fb:45 transport-cc\r\na=rtcp-fb:45 ccm fir\r\na=rtcp-fb:45 nack\r\na=rtcp-fb:45 nack pli\r\na=fmtp:45 level-idx=5;profile=0;tier=0\r\na=rtpmap:46 rtx/90000\r\na=fmtp:46 apt=45\r\na=rtpmap:98 VP9/90000\r\na=rtcp-fb:98 goog-remb\r\na=rtcp-fb:98 transport-cc\r\na=rtcp-fb:98 ccm fir\r\na=rtcp-fb:98 nack\r\na=rtcp-fb:98 nack pli\r\na=fmtp:98 profile-id=0\r\na=rtpmap:99 rtx/90000\r\na=fmtp:99 apt=98\r\na=rtpmap:100 VP9/90000\r\na=rtcp-fb:100 goog-remb\r\na=rtcp-fb:100 transport-cc\r\na=rtcp-fb:100 ccm fir\r\na=rtcp-fb:100 nack\r\na=rtcp-fb:100 nack pli\r\na=fmtp:100 profile-id=2\r\na=rtpmap:101 rtx/90000\r\na=fmtp:101 apt=100\r\na=rtpmap:118 red/90000\r\na=rtpmap:119 rtx/90000\r\na=fmtp:119 apt=118\r\na=rtpmap:120 ulpfec/90000\r\na=ssrc-group:FID 2332852880 2438857249\r\na=ssrc:2332852880 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:2332852880 msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\na=ssrc:2438857249 cname:xNdY9dgRvC8+jCAA\r\na=ssrc:2438857249 msid:c2fa56c1-1618-4987-947c-84d2e6b7b1ff b04239ce-b2be-49d9-92f8-f8c5691496e9\r\n",
+    "mediaIndex": 1,
+    "codecOptions": null,
+    "extra": [
+     {
+      "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+      "kind": "video",
+      "direction": "sendonly"
+     }
+    ],
+    "expectNative": {
+     "codecs": [
+      {
+       "kind": "audio",
+       "mimeType": "audio/opus",
+       "preferredPayloadType": 111,
+       "clockRate": 48000,
+       "channels": 2,
+       "parameters": {
+        "minptime": 10,
+        "useinbandfec": 1
+       },
+       "rtcpFeedback": [
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "nack"
+        }
+       ]
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/red",
+       "preferredPayloadType": 63,
+       "clockRate": 48000,
+       "channels": 2,
+       "parameters": {
+        "111/111": ""
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/G722",
+       "preferredPayloadType": 9,
+       "clockRate": 8000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/PCMU",
+       "preferredPayloadType": 0,
+       "clockRate": 8000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/PCMA",
+       "preferredPayloadType": 8,
+       "clockRate": 8000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/CN",
+       "preferredPayloadType": 13,
+       "clockRate": 8000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/telephone-event",
+       "preferredPayloadType": 110,
+       "clockRate": 48000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "audio",
+       "mimeType": "audio/telephone-event",
+       "preferredPayloadType": 126,
+       "clockRate": 8000,
+       "channels": 1,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/VP8",
+       "preferredPayloadType": 96,
+       "clockRate": 90000,
+       "parameters": {},
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 97,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 96
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 102,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 1,
+        "profile-level-id": "42001f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 103,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 102
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 104,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 0,
+        "profile-level-id": "42001f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 107,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 104
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 108,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 1,
+        "profile-level-id": "42e01f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 109,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 108
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 114,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 0,
+        "profile-level-id": "42e01f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 115,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 114
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 116,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 1,
+        "profile-level-id": "4d001f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 117,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 116
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/H264",
+       "preferredPayloadType": 39,
+       "clockRate": 90000,
+       "parameters": {
+        "level-asymmetry-allowed": 1,
+        "packetization-mode": 0,
+        "profile-level-id": "4d001f"
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 40,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 39
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/AV1",
+       "preferredPayloadType": 45,
+       "clockRate": 90000,
+       "parameters": {
+        "level-idx": 5,
+        "profile": 0,
+        "tier": 0
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 46,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 45
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/VP9",
+       "preferredPayloadType": 98,
+       "clockRate": 90000,
+       "parameters": {
+        "profile-id": 0
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 99,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 98
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/VP9",
+       "preferredPayloadType": 100,
+       "clockRate": 90000,
+       "parameters": {
+        "profile-id": 2
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 101,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 100
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/red",
+       "preferredPayloadType": 118,
+       "clockRate": 90000,
+       "parameters": {},
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/rtx",
+       "preferredPayloadType": 119,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 118
+       },
+       "rtcpFeedback": []
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/ulpfec",
+       "preferredPayloadType": 120,
+       "clockRate": 90000,
+       "parameters": {},
+       "rtcpFeedback": []
+      }
+     ],
+     "headerExtensions": [
+      {
+       "kind": "audio",
+       "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+       "preferredId": 1,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+       "preferredId": 2,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+       "preferredId": 3,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+       "preferredId": 4,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:toffset",
+       "preferredId": 14,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:3gpp:video-orientation",
+       "preferredId": 13,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+       "preferredId": 5,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/video-content-type",
+       "preferredId": 6,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/video-timing",
+       "preferredId": 7,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/color-space",
+       "preferredId": 8,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id",
+       "preferredId": 10,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id",
+       "preferredId": 11,
+       "preferredEncrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+       "preferredId": 9,
+       "preferredEncrypt": false,
+       "direction": "sendonly"
+      }
+     ]
+    },
+    "expectExtended": {
+     "codecs": [
+      {
+       "kind": "audio",
+       "mimeType": "audio/opus",
+       "clockRate": 48000,
+       "channels": 2,
+       "localPayloadType": 111,
+       "remotePayloadType": 100,
+       "localParameters": {
+        "minptime": 10,
+        "useinbandfec": 1
+       },
+       "remoteParameters": {
+        "useinbandfec": 1,
+        "usedtx": 1
+       },
+       "rtcpFeedback": [
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        }
+       ]
+      },
+      {
+       "kind": "video",
+       "mimeType": "video/VP8",
+       "clockRate": 90000,
+       "localPayloadType": 96,
+       "localRtxPayloadType": 97,
+       "remotePayloadType": 101,
+       "remoteRtxPayloadType": 102,
+       "localParameters": {},
+       "remoteParameters": {
+        "x-google-start-bitrate": 1000
+       },
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      }
+     ],
+     "headerExtensions": [
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+       "sendId": 4,
+       "recvId": 1,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id",
+       "sendId": 10,
+       "recvId": 2,
+       "encrypt": false,
+       "direction": "sendonly"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id",
+       "sendId": 11,
+       "recvId": 3,
+       "encrypt": false,
+       "direction": "sendonly"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+       "sendId": 2,
+       "recvId": 4,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+       "sendId": 3,
+       "recvId": 5,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "audio",
+       "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+       "sendId": 1,
+       "recvId": 10,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:3gpp:video-orientation",
+       "sendId": 13,
+       "recvId": 11,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "urn:ietf:params:rtp-hdrext:toffset",
+       "sendId": 14,
+       "recvId": 12,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+       "sendId": 9,
+       "recvId": 13,
+       "encrypt": false,
+       "direction": "sendrecv"
+      },
+      {
+       "kind": "video",
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+       "sendId": 5,
+       "recvId": 14,
+       "encrypt": false,
+       "direction": "sendrecv"
+      }
+     ]
+    },
+    "expectParams": {
+     "mid": "1",
+     "codecs": [
+      {
+       "mimeType": "video/VP8",
+       "payloadType": 96,
+       "clockRate": 90000,
+       "parameters": {},
+       "rtcpFeedback": [
+        {
+         "type": "goog-remb",
+         "parameter": ""
+        },
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "mimeType": "video/rtx",
+       "payloadType": 97,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 96
+       },
+       "rtcpFeedback": []
+      }
+     ],
+     "headerExtensions": [
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+       "id": 4,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id",
+       "id": 10,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id",
+       "id": 11,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+       "id": 2,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+       "id": 3,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:3gpp:video-orientation",
+       "id": 13,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:toffset",
+       "id": 14,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+       "id": 9,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+       "id": 5,
+       "encrypt": false,
+       "parameters": {}
+      }
+     ],
+     "encodings": [
+      {
+       "ssrc": 2332852880,
+       "rtx": {
+        "ssrc": 2438857249
+       }
+      }
+     ],
+     "rtcp": {
+      "cname": "xNdY9dgRvC8+jCAA"
+     },
+     "msid": "stream-1 track-video"
+    },
+    "expectRemoteParams": {
+     "codecs": [
+      {
+       "mimeType": "video/VP8",
+       "payloadType": 96,
+       "clockRate": 90000,
+       "parameters": {
+        "x-google-start-bitrate": 1000
+       },
+       "rtcpFeedback": [
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "mimeType": "video/rtx",
+       "payloadType": 97,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 96
+       },
+       "rtcpFeedback": []
+      }
+     ],
+     "headerExtensions": [
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+       "id": 4,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id",
+       "id": 10,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id",
+       "id": 11,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+       "id": 2,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+       "id": 3,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:3gpp:video-orientation",
+       "id": 13,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:toffset",
+       "id": 14,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-capture-time",
+       "id": 9,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+       "id": 5,
+       "encrypt": false,
+       "parameters": {}
+      }
+     ],
+     "encodings": [],
+     "rtcp": {}
+    },
+    "expectRemoteSdp": "v=0\r\no=mediasoup-client 10000 2 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=ice-lite\r\na=fingerprint:sha-384 F1:96:F3:5F:57:AC:AD:3C:E2:82:A6:3A:B8:81:B8:84:DF:30:65:88:21:8C:EE:50:FD:60:EB:1F:0A:F4:76:29:B4:69:AD:9B:4B:3C:7C:13:A8:82:BE:36:5F:B7:C9:81\r\na=ice-options:ice2\r\na=group:BUNDLE 0 1\r\nm=audio 7 UDP/TLS/RTP/SAVPF 111\r\nc=IN IP4 127.0.0.1\r\na=rtpmap:111 opus/48000/2\r\na=fmtp:111 useinbandfec=1;usedtx=1\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=setup:passive\r\na=mid:0\r\na=recvonly\r\na=ice-ufrag:fh6468n4h6tl94apourh3p89ir2a6hvu\r\na=ice-pwd:9r86omhi7kjfvms7ao9z936nst4kw798\r\na=candidate:udpcandidate 1 udp 1076302079 127.0.0.1 10314 typ host\r\na=candidate:tcpcandidate 1 tcp 1076276479 127.0.0.1 32273 typ host tcptype passive\r\na=end-of-candidates\r\na=ice-options:renomination\r\na=rtcp-mux\r\na=rtcp-rsize\r\nm=video 7 UDP/TLS/RTP/SAVPF 96 97\r\nc=IN IP4 127.0.0.1\r\na=rtpmap:96 VP8/90000\r\na=rtpmap:97 rtx/90000\r\na=fmtp:96 x-google-start-bitrate=1000\r\na=fmtp:97 apt=96\r\na=rtcp-fb:96 transport-cc \r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack \r\na=rtcp-fb:96 nack pli\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=setup:passive\r\na=mid:1\r\na=recvonly\r\na=ice-ufrag:fh6468n4h6tl94apourh3p89ir2a6hvu\r\na=ice-pwd:9r86omhi7kjfvms7ao9z936nst4kw798\r\na=candidate:udpcandidate 1 udp 1076302079 127.0.0.1 10314 typ host\r\na=candidate:tcpcandidate 1 tcp 1076276479 127.0.0.1 32273 typ host tcptype passive\r\na=end-of-candidates\r\na=ice-options:renomination\r\na=rtcp-mux\r\na=rtcp-rsize\r\n"
+   }
+  ],
+  "dtlsParameters": {
+   "role": "client",
+   "fingerprints": [
+    {
+     "algorithm": "sha-256",
+     "value": "A6:EB:98:CD:5E:D0:8C:DB:DB:A3:F7:B2:77:36:D6:E7:60:54:CE:98:14:F0:D2:DD:9C:94:7A:5C:18:D5:E1:39"
+    }
+   ]
+  }
+ },
+ "recv": {
+  "transportParams": {
+   "iceParameters": {
+    "usernameFragment": "ysicrche19twe54aj5rx0lin22q5be9v",
+    "password": "c6suxmrofnji0vqshntbuns9gw47dwz5",
+    "iceLite": true
+   },
+   "iceCandidates": [
+    {
+     "foundation": "udpcandidate",
+     "priority": 1076302079,
+     "ip": "127.0.0.1",
+     "address": "127.0.0.1",
+     "protocol": "udp",
+     "port": 38270,
+     "type": "host"
+    }
+   ],
+   "dtlsParameters": {
+    "fingerprints": [
+     {
+      "algorithm": "sha-512",
+      "value": "C8:B9:49:47:90:07:85:1A:4A:3C:97:F7:FA:A3:32:B8:32:FA:3C:13:91:B2:57:32:5F:AC:F4:B8:5C:72:D0:3B:CE:6C:40:7A:E2:F5:6C:4A:7E:D6:C2:A1:AD:BF:92:52:84:2D:87:49:06:06:52:63:ED:E3:A4:BF:20:51:50:E9"
+     },
+     {
+      "algorithm": "sha-1",
+      "value": "65:56:91:C4:2F:D6:79:9B:EB:A0:14:BA:63:9E:A6:B9:AF:38:9B:03"
+     },
+     {
+      "algorithm": "sha-224",
+      "value": "D1:CA:D5:24:F5:E4:44:7D:F2:90:C6:DD:FB:26:50:2E:8C:17:BB:ED:6E:8A:08:10:00:5C:4A:38"
+     },
+     {
+      "algorithm": "sha-256",
+      "value": "E2:3F:C1:10:AE:D7:26:28:23:00:06:32:B5:10:B0:64:AE:30:90:B1:08:88:C0:DA:E1:58:FA:EA:9E:0D:62:0C"
+     },
+     {
+      "algorithm": "sha-384",
+      "value": "F1:96:F3:5F:57:AC:AD:3C:E2:82:A6:3A:B8:81:B8:84:DF:30:65:88:21:8C:EE:50:FD:60:EB:1F:0A:F4:76:29:B4:69:AD:9B:4B:3C:7C:13:A8:82:BE:36:5F:B7:C9:81"
+     }
+    ],
+    "role": "auto"
+   }
+  },
+  "recvRtpCapabilities": {
+   "codecs": [
+    {
+     "kind": "audio",
+     "mimeType": "audio/opus",
+     "preferredPayloadType": 100,
+     "clockRate": 48000,
+     "channels": 2,
+     "parameters": {
+      "minptime": 10,
+      "useinbandfec": 1
+     },
+     "rtcpFeedback": [
+      {
+       "type": "transport-cc",
+       "parameter": ""
+      },
+      {
+       "type": "nack",
+       "parameter": ""
+      }
+     ]
+    },
+    {
+     "kind": "video",
+     "mimeType": "video/VP8",
+     "preferredPayloadType": 101,
+     "clockRate": 90000,
+     "parameters": {},
+     "rtcpFeedback": [
+      {
+       "type": "goog-remb",
+       "parameter": ""
+      },
+      {
+       "type": "transport-cc",
+       "parameter": ""
+      },
+      {
+       "type": "ccm",
+       "parameter": "fir"
+      },
+      {
+       "type": "nack",
+       "parameter": ""
+      },
+      {
+       "type": "nack",
+       "parameter": "pli"
+      }
+     ]
+    },
+    {
+     "kind": "video",
+     "mimeType": "video/rtx",
+     "preferredPayloadType": 102,
+     "clockRate": 90000,
+     "parameters": {
+      "apt": 101
+     },
+     "rtcpFeedback": []
+    }
+   ],
+   "headerExtensions": [
+    {
+     "kind": "video",
+     "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+     "preferredId": 1,
+     "preferredEncrypt": false,
+     "direction": "sendrecv"
+    },
+    {
+     "kind": "video",
+     "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+     "preferredId": 4,
+     "preferredEncrypt": false,
+     "direction": "sendrecv"
+    },
+    {
+     "kind": "video",
+     "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+     "preferredId": 5,
+     "preferredEncrypt": false,
+     "direction": "sendrecv"
+    },
+    {
+     "kind": "audio",
+     "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+     "preferredId": 10,
+     "preferredEncrypt": false,
+     "direction": "sendrecv"
+    },
+    {
+     "kind": "video",
+     "uri": "urn:3gpp:video-orientation",
+     "preferredId": 11,
+     "preferredEncrypt": false,
+     "direction": "sendrecv"
+    },
+    {
+     "kind": "video",
+     "uri": "urn:ietf:params:rtp-hdrext:toffset",
+     "preferredId": 12,
+     "preferredEncrypt": false,
+     "direction": "sendrecv"
+    },
+    {
+     "kind": "video",
+     "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+     "preferredId": 14,
+     "preferredEncrypt": false,
+     "direction": "sendrecv"
+    }
+   ]
+  },
+  "consumers": [
+   {
+    "kind": "audio",
+    "id": "fa6c4f45-4a31-40be-9a55-b78799d82af6",
+    "producerId": "9a2fd2fb-a0c2-4cea-ab3a-61da606c0169",
+    "rtpParameters": {
+     "codecs": [
+      {
+       "mimeType": "audio/opus",
+       "payloadType": 100,
+       "clockRate": 48000,
+       "channels": 2,
+       "parameters": {
+        "useinbandfec": 1,
+        "usedtx": 1
+       },
+       "rtcpFeedback": []
+      }
+     ],
+     "headerExtensions": [
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+       "id": 1,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+       "id": 4,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:ssrc-audio-level",
+       "id": 10,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+       "id": 14,
+       "encrypt": false,
+       "parameters": {}
+      }
+     ],
+     "encodings": [
+      {
+       "ssrc": 341724011
+      }
+     ],
+     "rtcp": {
+      "cname": "peer-audio",
+      "reducedSize": true
+     },
+     "mid": "0"
+    }
+   },
+   {
+    "kind": "video",
+    "id": "1411d803-e970-4489-8088-b9c7fdda24a9",
+    "producerId": "d9f0378f-6057-44cc-84c7-c257462a5863",
+    "rtpParameters": {
+     "codecs": [
+      {
+       "mimeType": "video/VP8",
+       "payloadType": 101,
+       "clockRate": 90000,
+       "parameters": {
+        "x-google-start-bitrate": 1000
+       },
+       "rtcpFeedback": [
+        {
+         "type": "transport-cc",
+         "parameter": ""
+        },
+        {
+         "type": "ccm",
+         "parameter": "fir"
+        },
+        {
+         "type": "nack",
+         "parameter": ""
+        },
+        {
+         "type": "nack",
+         "parameter": "pli"
+        }
+       ]
+      },
+      {
+       "mimeType": "video/rtx",
+       "payloadType": 102,
+       "clockRate": 90000,
+       "parameters": {
+        "apt": 101
+       },
+       "rtcpFeedback": []
+      }
+     ],
+     "headerExtensions": [
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:sdes:mid",
+       "id": 1,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time",
+       "id": 4,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01",
+       "id": 5,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:3gpp:video-orientation",
+       "id": 11,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "urn:ietf:params:rtp-hdrext:toffset",
+       "id": 12,
+       "encrypt": false,
+       "parameters": {}
+      },
+      {
+       "uri": "http://www.webrtc.org/experiments/rtp-hdrext/playout-delay",
+       "id": 14,
+       "encrypt": false,
+       "parameters": {}
+      }
+     ],
+     "encodings": [
+      {
+       "ssrc": 156084103,
+       "rtx": {
+        "ssrc": 156084104
+       }
+      }
+     ],
+     "rtcp": {
+      "cname": "peer-audio",
+      "reducedSize": true
+     },
+     "mid": "1"
+    }
+   }
+  ],
+  "steps": [
+   {
+    "mid": "0",
+    "consumer": 0,
+    "expectRemoteOffer": "v=0\r\no=mediasoup-client 10000 1 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=ice-lite\r\na=fingerprint:sha-384 F1:96:F3:5F:57:AC:AD:3C:E2:82:A6:3A:B8:81:B8:84:DF:30:65:88:21:8C:EE:50:FD:60:EB:1F:0A:F4:76:29:B4:69:AD:9B:4B:3C:7C:13:A8:82:BE:36:5F:B7:C9:81\r\na=ice-options:ice2\r\na=group:BUNDLE 0\r\nm=audio 7 UDP/TLS/RTP/SAVPF 100\r\nc=IN IP4 127.0.0.1\r\na=rtpmap:100 opus/48000/2\r\na=fmtp:100 useinbandfec=1;usedtx=1\r\na=extmap:1 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:4 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:10 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:14 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap-allow-mixed\r\na=setup:actpass\r\na=mid:0\r\na=msid:peer-audio fa6c4f45-4a31-40be-9a55-b78799d82af6\r\na=sendonly\r\na=ice-ufrag:ysicrche19twe54aj5rx0lin22q5be9v\r\na=ice-pwd:c6suxmrofnji0vqshntbuns9gw47dwz5\r\na=candidate:udpcandidate 1 udp 1076302079 127.0.0.1 38270 typ host\r\na=end-of-candidates\r\na=ice-options:renomination\r\na=ssrc:341724011 cname:peer-audio\r\na=rtcp-mux\r\na=rtcp-rsize\r\n"
+   },
+   {
+    "mid": "1",
+    "consumer": 1,
+    "expectRemoteOffer": "v=0\r\no=mediasoup-client 10000 2 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=ice-lite\r\na=fingerprint:sha-384 F1:96:F3:5F:57:AC:AD:3C:E2:82:A6:3A:B8:81:B8:84:DF:30:65:88:21:8C:EE:50:FD:60:EB:1F:0A:F4:76:29:B4:69:AD:9B:4B:3C:7C:13:A8:82:BE:36:5F:B7:C9:81\r\na=ice-options:ice2\r\na=group:BUNDLE 0 1\r\nm=audio 7 UDP/TLS/RTP/SAVPF 100\r\nc=IN IP4 127.0.0.1\r\na=rtpmap:100 opus/48000/2\r\na=fmtp:100 useinbandfec=1;usedtx=1\r\na=extmap:1 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:4 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:10 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:14 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap-allow-mixed\r\na=setup:actpass\r\na=mid:0\r\na=msid:peer-audio fa6c4f45-4a31-40be-9a55-b78799d82af6\r\na=sendonly\r\na=ice-ufrag:ysicrche19twe54aj5rx0lin22q5be9v\r\na=ice-pwd:c6suxmrofnji0vqshntbuns9gw47dwz5\r\na=candidate:udpcandidate 1 udp 1076302079 127.0.0.1 38270 typ host\r\na=end-of-candidates\r\na=ice-options:renomination\r\na=ssrc:341724011 cname:peer-audio\r\na=rtcp-mux\r\na=rtcp-rsize\r\nm=video 7 UDP/TLS/RTP/SAVPF 101 102\r\nc=IN IP4 127.0.0.1\r\na=rtpmap:101 VP8/90000\r\na=rtpmap:102 rtx/90000\r\na=fmtp:101 x-google-start-bitrate=1000\r\na=fmtp:102 apt=101\r\na=rtcp-fb:101 transport-cc \r\na=rtcp-fb:101 ccm fir\r\na=rtcp-fb:101 nack \r\na=rtcp-fb:101 nack pli\r\na=extmap:1 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:4 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:5 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:11 urn:3gpp:video-orientation\r\na=extmap:12 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:14 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap-allow-mixed\r\na=setup:actpass\r\na=mid:1\r\na=msid:peer-audio 1411d803-e970-4489-8088-b9c7fdda24a9\r\na=sendonly\r\na=ice-ufrag:ysicrche19twe54aj5rx0lin22q5be9v\r\na=ice-pwd:c6suxmrofnji0vqshntbuns9gw47dwz5\r\na=candidate:udpcandidate 1 udp 1076302079 127.0.0.1 38270 typ host\r\na=end-of-candidates\r\na=ice-options:renomination\r\na=ssrc:156084103 cname:peer-audio\r\na=ssrc:156084104 cname:peer-audio\r\na=ssrc-group:FID 156084103 156084104\r\na=rtcp-mux\r\na=rtcp-rsize\r\n"
+   }
+  ],
+  "answerSdp": "v=0\r\no=- 8945270311005388924 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=audio 9 UDP/TLS/RTP/SAVPF 100\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:MHA0\r\na=ice-pwd:Blya3MldEjeUoM22sXOHLLFb\r\na=ice-options:trickle\r\na=fingerprint:sha-256 FA:86:46:5D:D1:A8:C0:D6:36:22:D4:54:66:C7:EC:73:58:6E:D7:7B:6A:D3:D5:13:BD:D3:FF:B0:5C:13:E4:FF\r\na=setup:active\r\na=mid:0\r\na=extmap:10 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:4 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:1 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:100 opus/48000/2\r\na=fmtp:100 minptime=10;useinbandfec=1\r\nm=video 9 UDP/TLS/RTP/SAVPF 101 102\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:MHA0\r\na=ice-pwd:Blya3MldEjeUoM22sXOHLLFb\r\na=ice-options:trickle\r\na=fingerprint:sha-256 FA:86:46:5D:D1:A8:C0:D6:36:22:D4:54:66:C7:EC:73:58:6E:D7:7B:6A:D3:D5:13:BD:D3:FF:B0:5C:13:E4:FF\r\na=setup:active\r\na=mid:1\r\na=extmap:12 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:4 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:11 urn:3gpp:video-orientation\r\na=extmap:5 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:14 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:1 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=recvonly\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:101 VP8/90000\r\na=rtcp-fb:101 transport-cc\r\na=rtcp-fb:101 ccm fir\r\na=rtcp-fb:101 nack\r\na=rtcp-fb:101 nack pli\r\na=rtpmap:102 rtx/90000\r\na=fmtp:102 apt=101\r\n",
+  "expectDtls": {
+   "role": "client",
+   "fingerprints": [
+    {
+     "algorithm": "sha-256",
+     "value": "FA:86:46:5D:D1:A8:C0:D6:36:22:D4:54:66:C7:EC:73:58:6E:D7:7B:6A:D3:D5:13:BD:D3:FF:B0:5C:13:E4:FF"
+    }
+   ]
+  },
+  "expectAnswerAfterCodecParameters": "v=0\r\no=- 8945270311005388924 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=msid-semantic:  WMS\r\na=group:BUNDLE 0 1\r\nm=audio 9 UDP/TLS/RTP/SAVPF 100\r\nc=IN IP4 0.0.0.0\r\na=rtpmap:100 opus/48000/2\r\na=fmtp:100 minptime=10;useinbandfec=1\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=extmap:10 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:4 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:1 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=setup:active\r\na=mid:0\r\na=recvonly\r\na=ice-ufrag:MHA0\r\na=ice-pwd:Blya3MldEjeUoM22sXOHLLFb\r\na=fingerprint:sha-256 FA:86:46:5D:D1:A8:C0:D6:36:22:D4:54:66:C7:EC:73:58:6E:D7:7B:6A:D3:D5:13:BD:D3:FF:B0:5C:13:E4:FF\r\na=ice-options:trickle\r\na=rtcp-mux\r\na=rtcp-rsize\r\nm=video 9 UDP/TLS/RTP/SAVPF 101 102\r\nc=IN IP4 0.0.0.0\r\na=rtpmap:101 VP8/90000\r\na=rtpmap:102 rtx/90000\r\na=fmtp:102 apt=101\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=rtcp-fb:101 transport-cc\r\na=rtcp-fb:101 ccm fir\r\na=rtcp-fb:101 nack\r\na=rtcp-fb:101 nack pli\r\na=extmap:12 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:4 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:11 urn:3gpp:video-orientation\r\na=extmap:5 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:14 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:1 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=setup:active\r\na=mid:1\r\na=recvonly\r\na=ice-ufrag:MHA0\r\na=ice-pwd:Blya3MldEjeUoM22sXOHLLFb\r\na=fingerprint:sha-256 FA:86:46:5D:D1:A8:C0:D6:36:22:D4:54:66:C7:EC:73:58:6E:D7:7B:6A:D3:D5:13:BD:D3:FF:B0:5C:13:E4:FF\r\na=ice-options:trickle\r\na=rtcp-mux\r\na=rtcp-rsize\r\n"
+ },
+ "restart": {
+  "iceParameters": {
+   "usernameFragment": "newufrag1",
+   "password": "newpassword0123456789abcd",
+   "iceLite": true
+  },
+  "expectRemoteSdp": "v=0\r\no=mediasoup-client 10000 3 IN IP4 0.0.0.0\r\ns=-\r\nt=0 0\r\na=extmap-allow-mixed\r\na=ice-lite\r\na=fingerprint:sha-384 F1:96:F3:5F:57:AC:AD:3C:E2:82:A6:3A:B8:81:B8:84:DF:30:65:88:21:8C:EE:50:FD:60:EB:1F:0A:F4:76:29:B4:69:AD:9B:4B:3C:7C:13:A8:82:BE:36:5F:B7:C9:81\r\na=ice-options:ice2\r\na=group:BUNDLE 0 1\r\nm=audio 7 UDP/TLS/RTP/SAVPF 111\r\nc=IN IP4 127.0.0.1\r\na=rtpmap:111 opus/48000/2\r\na=fmtp:111 useinbandfec=1;usedtx=1\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=setup:passive\r\na=mid:0\r\na=recvonly\r\na=ice-ufrag:newufrag1\r\na=ice-pwd:newpassword0123456789abcd\r\na=candidate:udpcandidate 1 udp 1076302079 127.0.0.1 10314 typ host\r\na=candidate:tcpcandidate 1 tcp 1076276479 127.0.0.1 32273 typ host tcptype passive\r\na=end-of-candidates\r\na=ice-options:renomination\r\na=rtcp-mux\r\na=rtcp-rsize\r\nm=video 7 UDP/TLS/RTP/SAVPF 96 97\r\nc=IN IP4 127.0.0.1\r\na=rtpmap:96 VP8/90000\r\na=rtpmap:97 rtx/90000\r\na=fmtp:96 x-google-start-bitrate=1000\r\na=fmtp:97 apt=96\r\na=rtcp-fb:96 transport-cc \r\na=rtcp-fb:96 ccm fir\r\na=rtcp-fb:96 nack \r\na=rtcp-fb:96 nack pli\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=setup:passive\r\na=mid:1\r\na=recvonly\r\na=ice-ufrag:newufrag1\r\na=ice-pwd:newpassword0123456789abcd\r\na=candidate:udpcandidate 1 udp 1076302079 127.0.0.1 10314 typ host\r\na=candidate:tcpcandidate 1 tcp 1076276479 127.0.0.1 32273 typ host tcptype passive\r\na=end-of-candidates\r\na=ice-options:renomination\r\na=rtcp-mux\r\na=rtcp-rsize\r\n"
+ }
+}

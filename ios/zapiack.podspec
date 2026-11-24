@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'zapiack'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'Push notifications for Flutter with Zapiack.'
   s.description      = <<-DESC
 Register devices, show rich push, and follow what people do after a tap.

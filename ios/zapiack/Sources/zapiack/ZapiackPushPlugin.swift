@@ -59,6 +59,9 @@ public class ZapiackPushPlugin: NSObject, FlutterPlugin, UNUserNotificationCente
         case "track":
             guard let name = args["name"] as? String else { return result(FlutterError(code: "invalid_argument", message: "name is required", details: nil)) }
             result(ZapiackPush.shared.track(name, properties: Self.values(args["properties"])))
+        case "enableLiveActivities":
+            ZapiackPush.shared.enableLiveActivities()
+            result(nil)
         case "flush":
             Task { await ZapiackPush.shared.flush(); result(nil) }
         case "initialTap":

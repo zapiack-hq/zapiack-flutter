@@ -7,8 +7,8 @@ from="$here/../../ios/Sources"
 to="$here/ios/zapiack/Sources/zapiack/Zapiack"
 rm -rf "$to"
 mkdir -p "$to"
-for f in "$from"/ZapiackCore/*.swift "$from"/ZapiackPush/*.swift; do
+for f in "$from"/ZapiackCore/*.swift "$from"/ZapiackPush/*.swift "$from"/ZapiackLayout/*.swift "$from"/ZapiackLiveActivity/*.swift; do
   # One module here, so the imports between the SDK's targets and its re-exported names are dropped.
-  grep -v -e '^import ZapiackCore$' -e '^public typealias ' "$f" > "$to/$(basename "$f")"
+  grep -v -e '^import ZapiackCore$' -e '^import ZapiackLiveActivity$' -e '^import ZapiackLayout$' -e '^public typealias ' "$f" > "$to/$(basename "$f")"
 done
 echo "copied $(ls "$to" | wc -l | tr -d ' ') files"

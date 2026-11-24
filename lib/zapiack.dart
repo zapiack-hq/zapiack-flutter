@@ -3,6 +3,14 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
+// Live messages over one WebSocket. Separate from push: use either, or both.
+export 'src/realtime.dart' hide isAfter;
+
+// Voice and video calls: one-to-one and group, on a mediasoup client written for this SDK.
+export 'src/call.dart' hide RealtimeSignal;
+export 'src/call_media.dart' show CallMedia;
+export 'src/calls_flutter.dart';
+
 /// What was tapped, handed to the app so it can route.
 @immutable
 class ZapiackTap {
@@ -121,6 +129,11 @@ class ZapiackPush {
 
   /// Sends anything waiting. Call when the app comes to the foreground.
   Future<void> flush() => _channel.invokeMethod<void>('flush');
+
+  /// Lets Zapiack start Live Activities on iOS 17.2 and later: a template push with a timer or progress then counts down on the
+  /// lock screen and in the Dynamic Island. Also add ZapiackLiveActivityWidget to a widget extension (see the iOS README). Does
+  /// nothing on Android, where those pushes are drawn in the notification itself.
+  Future<void> enableLiveActivities() => _channel.invokeMethod<void>('enableLiveActivities');
 
   /// Notifications tapped while the app is running.
   Stream<ZapiackTap> get onTap => _taps.stream;
